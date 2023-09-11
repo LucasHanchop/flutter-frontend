@@ -1,4 +1,4 @@
-import 'package:mbtech_frontend/models/student.dart';
+import 'package:mbtech_frontend/models/student_model.dart';
 
 final DUMMY_STUDENTS = {
   "1" : Student(

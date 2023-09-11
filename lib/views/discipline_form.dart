@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbtech_frontend/models/discipline.dart';
+import 'package:mbtech_frontend/models/discipline_model.dart';
 import 'package:mbtech_frontend/providers/disciplines.dart';
 import 'package:provider/provider.dart';
 
@@ -33,6 +33,7 @@ class _DisciplineFormState extends State<DisciplineForm> {
                   _form.currentState?.save();
                   Provider.of<Disciplines>(context, listen: false).put(
                     Discipline(
+                      id: _formData['id']!,
                       name: _formData['name']!,
                       teacher: _formData['teacher']!,
                       room: _formData['room']!,

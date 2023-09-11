@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbtech_frontend/models/discipline.dart';
+import 'package:mbtech_frontend/models/discipline_model.dart';
 import 'package:mbtech_frontend/providers/disciplines.dart';
 import 'package:mbtech_frontend/routes/app_routes.dart';
 import 'package:provider/provider.dart';

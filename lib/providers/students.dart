@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:mbtech_frontend/data/dummy_students.dart';
-import 'package:mbtech_frontend/models/student.dart';
+import 'package:mbtech_frontend/models/student_model.dart';
 
 class Students with ChangeNotifier {
   final Map<String, Student> _items = {...DUMMY_STUDENTS};
@@ -26,6 +26,7 @@ class Students with ChangeNotifier {
     if (student.id != null && _items.containsKey(student.id)) {
       _items.update(student.id.toString(),(_) => 
         Student(
+          id: student.id,
           name: student.name,
           enrollment: student.enrollment,
           phone: student.phone,
@@ -38,6 +39,7 @@ class Students with ChangeNotifier {
     final id = Random().nextDouble().toString();
     _items.putIfAbsent(id,() => 
       Student(
+        id: id,
         name: student.name,
         enrollment: student.enrollment,
         phone: student.phone,

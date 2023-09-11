@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbtech_frontend/models/student.dart';
+import 'package:mbtech_frontend/models/student_model.dart';
 import 'package:mbtech_frontend/providers/students.dart';
 import 'package:mbtech_frontend/routes/app_routes.dart';
 import 'package:provider/provider.dart';

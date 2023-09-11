@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbtech_frontend/models/student.dart';
+import 'package:mbtech_frontend/models/student_model.dart';
 import 'package:mbtech_frontend/providers/students.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +16,7 @@ class _StudentFormState extends State<StudentForm> {
   final Map<String, String> _formData = {};
 
   void _loadFormData(Student student) {
-    _formData['id'] = student.id!;
+    _formData['id'] = student.id;
     _formData['name'] = student.name;
     _formData['phone'] = student.phone;
     _formData['enrollment'] = student.enrollment.toString();
@@ -45,7 +45,7 @@ class _StudentFormState extends State<StudentForm> {
               onPressed: () {
                 _form.currentState?.save();
                 Provider.of<Students>(context, listen: false).put(Student(
-                  id: _formData['id'],
+                  id: _formData['id']!,
                   name: _formData['name']!,
                   address: _formData['address']!,
                   phone: _formData['phone']!,

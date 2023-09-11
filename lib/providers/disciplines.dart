@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:mbtech_frontend/models/discipline.dart';
+import 'package:mbtech_frontend/models/discipline_model.dart';
 
 class Disciplines with ChangeNotifier {
   final Map<String, Discipline> _items = {};
@@ -22,6 +22,7 @@ class Disciplines with ChangeNotifier {
     if (discipline.id != null && _items.containsKey(discipline.id)) {
       _items.update(discipline.id.toString(), (_) => 
         Discipline(
+          id: discipline.id,
           name: discipline.name,
           room: discipline.room,
           teacher: discipline.teacher, 
