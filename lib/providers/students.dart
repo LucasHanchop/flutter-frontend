@@ -20,11 +20,11 @@ class Students with ChangeNotifier {
   }
 
   void put(Student student) {
-    if (student.id == null) {
+    if (student != null) {
       return;
     }
     if (student.id != null && _items.containsKey(student.id)) {
-      _items.update(student.id.toString(), (_) => 
+      _items.update(student.id.toString(),(_) => 
         Student(
           name: student.name,
           enrollment: student.enrollment,

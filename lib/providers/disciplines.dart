@@ -19,9 +19,6 @@ class Disciplines with ChangeNotifier {
   }
 
   void put(Discipline discipline) {
-    if (discipline.id == null) {
-      return;
-    }
     if (discipline.id != null && _items.containsKey(discipline.id)) {
       _items.update(discipline.id.toString(), (_) => 
         Discipline(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mbtech_frontend/models/student.dart';
+import 'package:mbtech_frontend/providers/students.dart';
 import 'package:mbtech_frontend/routes/app_routes.dart';
+import 'package:provider/provider.dart';
 
 class StudentTile extends StatelessWidget {
   final Student student;
@@ -30,7 +32,30 @@ class StudentTile extends StatelessWidget {
               color: Colors.orange,
               icon: const Icon(Icons.edit)),
           IconButton(
-              onPressed: () => {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text("Excluir Aluno?"),
+                    content: const Text("Tem certeza?"),
+                    actions: <Widget>[
+                      TextButton(
+                        child: const Text("Não"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: const Text("Sim"),
+                        onPressed: () {
+                          Provider.of<Students>(context, listen: false).remove(student);
+                          Navigator.of(context).pop();
+                        },
+                      )
+                        ],
+                  )
+                );
+              },
               color: Colors.red,
               icon: const Icon(Icons.delete))
         ]),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mbtech_frontend/models/discipline.dart';
+import 'package:mbtech_frontend/providers/disciplines.dart';
 import 'package:mbtech_frontend/routes/app_routes.dart';
+import 'package:provider/provider.dart';
 
 class DisciplineTile extends StatelessWidget {
   final Discipline discipline;
@@ -25,7 +27,30 @@ class DisciplineTile extends StatelessWidget {
               color: Colors.orange,
               icon: const Icon(Icons.edit)),
           IconButton(
-              onPressed: () => {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text("Excluir Aluno?"),
+                    content: const Text("Tem certeza?"),
+                    actions: <Widget>[
+                      TextButton(
+                        child: const Text("Não"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: const Text("Sim"),
+                        onPressed: () {
+                          Provider.of<Disciplines>(context, listen: false).remove(discipline);
+                          Navigator.of(context).pop();
+                        },
+                      )
+                        ],
+                  )
+                );
+              },
               color: Colors.red,
               icon: const Icon(Icons.delete))
         ]),

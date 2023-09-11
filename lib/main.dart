@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           AppRoutes.STUDENT : (ctx) => const StudentList(), 
-          AppRoutes.STUDENT_FORM : (ctx) => const StudentForm(), 
+          AppRoutes.STUDENT_FORM : (ctx) => StudentForm(), 
           AppRoutes.DISCIPLINE: (ctx) => const DisciplineList(),
-          AppRoutes.DISCIPLINE_FORM: (ctx) => const DisciplineForm()
+          AppRoutes.DISCIPLINE_FORM: (ctx) => DisciplineForm()
           ,
         },
       ),
