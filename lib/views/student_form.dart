@@ -52,7 +52,7 @@ class _StudentFormState extends State<StudentForm> {
                   enrollment: int.parse(_formData['enrollment']!),
                   avatarUrl: _formData['avatarUrl']!,
                 ));
-                Navigator.of(context).pop();
+                Navigator.pop(context);
               },
               icon: const Icon(Icons.save))
         ],

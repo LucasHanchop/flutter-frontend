@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mbtech_frontend/providers/disciplines.dart';
 import 'package:mbtech_frontend/providers/students.dart';
 import 'package:mbtech_frontend/routes/app_routes.dart';
 import 'package:mbtech_frontend/views/discipline_form.dart';
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => Students()
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => Disciplines()
         )
       ],
       child: MaterialApp(

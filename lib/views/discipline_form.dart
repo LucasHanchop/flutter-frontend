@@ -38,7 +38,7 @@ class _DisciplineFormState extends State<DisciplineForm> {
                       room: _formData['room']!,
                     )
                   );
-                  Navigator.of(context).pop();
+                  Navigator.pop(context);
                 },
                 icon: const Icon(Icons.save))
           ]),

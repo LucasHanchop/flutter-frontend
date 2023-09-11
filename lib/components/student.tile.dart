@@ -42,14 +42,14 @@ class StudentTile extends StatelessWidget {
                       TextButton(
                         child: const Text("Não"),
                         onPressed: () {
-                          Navigator.of(context).pop();
+                          Navigator.pop(context);
                         },
                       ),
                       TextButton(
                         child: const Text("Sim"),
                         onPressed: () {
                           Provider.of<Students>(context, listen: false).remove(student);
-                          Navigator.of(context).pop();
+                          Navigator.pop(context);
                         },
                       )
                         ],
